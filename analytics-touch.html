@@ -1,0 +1,11 @@
+<!--
+Google Analytics の Tracking Code をモバイルエントリーページに追加する
+
+使い方
+  'UA-XXXXX-X' を書き換えて各記事の最後の行に追加
+
+サイドバーはモバイルページには出力されないので、
+各記事にコードを追加する必要がある。
+モバイルトップページは現状はトラッキングできない。
+-->
+<script>(function(b){if(window._gaq&&!location.pathname.indexOf("/touch/entry/")){var a=b.replace(/\W/g,"");_gaq.push([a+"._setAccount",b],[a+"._trackPageview"],[a+"._trackPageLoadTime"])}})("UA-XXXXX-X")</script>
