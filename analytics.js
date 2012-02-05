@@ -11,13 +11,12 @@
   var account = 'UA-XXXXX-X';
 
   if (!window._gaq) return;
-  if (/^\/preview\b/.test(location.pathname)) return;
-  if (/[&?]preview=/.test(location.search)) return;
+  if (/^\/preview\b/.test(location.pathname) ||
+      /[&?]preview=/.test(location.search)) return;
 
   var prefix = account.replace(/\W/g, '');
   _gaq.push(
     [prefix + '._setAccount', account],
-    [prefix + '._trackPageview'],
-    [prefix + '._trackPageLoadTime']
+    [prefix + '._trackPageview']
   );
 })();

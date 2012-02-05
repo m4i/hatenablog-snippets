@@ -8,7 +8,6 @@
   var prefix = account.replace(/\W/g, '');
   _gaq.push(
     [prefix + '._setAccount', account],
-    [prefix + '._trackPageview'],
-    [prefix + '._trackPageLoadTime']
+    [prefix + '._trackPageview']
   );
 })('UA-XXXXX-X');
