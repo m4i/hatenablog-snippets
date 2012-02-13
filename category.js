@@ -3,8 +3,7 @@
  *   サイドバーに追加
  */
 (function($) {
-  var $module_body = $('script:last').parent();
-  if (!$module_body.hasClass('hatena-module-body')) return;
+  var $module_body = $('.hatena-module-body:last');
 
   $module_body.parent()
     .removeClass('hatena-module-html')
