@@ -5,9 +5,10 @@
  *   サイドバーに追加
  */
 (function($) {
-  if (location.pathname !== '/') return;
+  if (!(location.pathname === '/' ||
+        location.pathname.indexOf('/category/') === 0)) return;
 
-  function path(url) {
+  function pathname(url) {
     return url.replace(/^https?:\/\/[^\/]*|[#?].*$/g, '');
   }
 
@@ -19,7 +20,7 @@
       .find('header.entry-header a.entry-title-link').attr('href');
 
     var $a = $seemore.find('a');
-    if ($a.length === 1 && path($a.attr('href')) === path(url)) return;
+    if ($a.length === 1 && pathname($a.attr('href')) === pathname(url)) return;
 
     var $tail = $('<a>')
       .addClass('seemore')
